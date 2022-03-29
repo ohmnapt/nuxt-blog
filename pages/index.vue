@@ -3,28 +3,15 @@
     <section class="intro">
       <h1>Get the lastest tech new!</h1>
     </section>
-    <section class="featured-posts">
-      <post-preview
-        id="1"
-        thumbnail="https://www.hydrocarbons-technology.com/wp-content/uploads/sites/9/2020/09/shutterstock_1152185600-1440x1008-1-857x600.jpg"
-        title="Blockchain"
-        previewText="my first post"
-      />
-      <post-preview
-        id="2"
-        thumbnail="https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg"
-        title="Defi"
-        previewText="my first post"
-      />
-    </section>
+    <PostList />
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview.vue'
+import PostList from '@/components/Posts/PostList.vue'
 export default {
   components: {
-    PostPreview,
+    PostList,
   },
 }
 </script>
