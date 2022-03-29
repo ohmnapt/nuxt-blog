@@ -4,23 +4,30 @@
       <h1>Get the lastest tech new!</h1>
     </section>
     <section class="featured-posts">
-      <nuxt-link :to="'/posts/' + 1">
-        <article class="post-preview">
-          <div
-            class="post-thumbnail"
-            style="
-              background-image: url(https://www.hydrocarbons-technology.com/wp-content/uploads/sites/9/2020/09/shutterstock_1152185600-1440x1008-1-857x600.jpg);
-            "
-          ></div>
-          <div class="post-content">
-            <h1>Post title</h1>
-            <p>Preview content</p>
-          </div>
-        </article>
-      </nuxt-link>
+      <post-preview
+        id="1"
+        thumbnail="https://www.hydrocarbons-technology.com/wp-content/uploads/sites/9/2020/09/shutterstock_1152185600-1440x1008-1-857x600.jpg"
+        title="Blockchain"
+        previewText="my first post"
+      />
+      <post-preview
+        id="2"
+        thumbnail="https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg"
+        title="Defi"
+        previewText="my first post"
+      />
     </section>
   </div>
 </template>
+
+<script>
+import PostPreview from '@/components/Posts/PostPreview.vue'
+export default {
+  components: {
+    PostPreview,
+  },
+}
+</script>
 
 <style scoped>
 .intro {
@@ -60,41 +67,5 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
