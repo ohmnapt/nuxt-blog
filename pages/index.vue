@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the lastest tech new!</h1>
     </section>
-    <PostList />
+    <PostList posts="" />
   </div>
 </template>
 
@@ -12,6 +12,26 @@ import PostList from '@/components/Posts/PostList.vue'
 export default {
   components: {
     PostList,
+  },
+  data() {
+    return {
+      loadedPosts: [
+        {
+          id: 1,
+          titlt: 'first post',
+          previewText: 'This is preview text',
+          thumbnail:
+            'https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg',
+        },
+        {
+          id: 2,
+          titlt: 'secound post',
+          previewText: 'This is preview text2',
+          thumbnail:
+            'https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg',
+        },
+      ],
+    }
   },
 }
 </script>
