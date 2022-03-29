@@ -2,12 +2,14 @@
   <section class="post-list">
     <PostPreview
       id="1"
+      :is-admin="isAdmin"
       thumbnail="https://www.hydrocarbons-technology.com/wp-content/uploads/sites/9/2020/09/shutterstock_1152185600-1440x1008-1-857x600.jpg"
       title="Blockchain"
       previewText="my first post"
     />
     <PostPreview
       id="2"
+      :is-admin="isAdmin"
       thumbnail="https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg"
       title="Defi"
       previewText="my first post"
@@ -20,6 +22,12 @@ import PostPreview from '@/components/Posts/PostPreview.vue'
 export default {
   components: {
     PostPreview,
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
