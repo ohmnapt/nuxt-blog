@@ -9,6 +9,7 @@
 <script>
 import AdminPostForm from '@/components/admin/AdminPostForm.vue'
 export default {
+  layout: 'admin',
   components: {
     AdminPostForm,
   },
