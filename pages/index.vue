@@ -1,38 +1,47 @@
 <template>
   <div class="home-page">
     <section class="intro">
-      <h1>Get the lastest tech new!</h1>
+      <h1>Get the latest tech news!</h1>
     </section>
-    <PostList posts="" />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList.vue'
+import PostList from '@/components/Posts/PostList'
+
 export default {
   components: {
     PostList,
   },
-  data() {
-    return {
-      loadedPosts: [
-        {
-          id: 1,
-          titlt: 'first post',
-          previewText: 'This is preview text',
-          thumbnail:
-            'https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg',
-        },
-        {
-          id: 2,
-          titlt: 'secound post',
-          previewText: 'This is preview text2',
-          thumbnail:
-            'https://siambc.com/wp-content/uploads/2021/07/defi-scaled.jpg',
-        },
-      ],
-    }
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: '1',
+            title: 'First Post',
+            previewText: 'This is our first post!',
+            thumbnail:
+              'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
+          },
+          {
+            id: '2',
+            title: 'Second Post',
+            previewText: 'This is our second post!',
+            thumbnail:
+              'https://static.pexels.com/photos/270348/pexels-photo-270348.jpeg',
+          },
+        ],
+      })
+    }, 1500)
   },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
+  created() {},
 }
 </script>
 
